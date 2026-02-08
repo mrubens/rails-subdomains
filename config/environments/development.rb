@@ -50,6 +50,6 @@ Rails.application.configure do
   # lvh.me has TLD length of 1 (me), so we use 1 for proper subdomain parsing
   config.action_dispatch.tld_length = 1
 
-  # Allow lvh.me and all its subdomains for local development
-  config.hosts << ".lvh.me"
+  # Allow all hosts in development
+  config.hosts.clear
 end
