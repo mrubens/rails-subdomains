@@ -1,0 +1,7 @@
+<h1>Tenant: <%= @tenant %></h1>
+
+<p>This is the page for tenant <strong><%= @tenant %></strong>.</p>
+
+<p>Any subdomain that's not "admin" or "api" will route here via wildcard matching.</p>
+
+<p><%= link_to "← Back to main site", root_url(subdomain: false) %></p>

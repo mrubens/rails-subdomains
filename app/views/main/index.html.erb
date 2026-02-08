@@ -1,0 +1,14 @@
+<h1>Main Site</h1>
+
+<p>Current subdomain: <strong><%= @subdomain %></strong></p>
+
+<h2>Try these subdomains:</h2>
+<ul>
+  <li><strong>admin.lvh.me:3000</strong> - Admin dashboard (specific subdomain constraint)</li>
+  <li><strong>api.lvh.me:3000</strong> - API endpoint (specific subdomain constraint)</li>
+  <li><strong>acme.lvh.me:3000</strong> - Tenant "acme" (wildcard subdomain)</li>
+  <li><strong>demo.lvh.me:3000</strong> - Tenant "demo" (wildcard subdomain)</li>
+  <li><strong>anything.lvh.me:3000</strong> - Any tenant name works!</li>
+</ul>
+
+<p><em>Note: lvh.me is a domain that points to 127.0.0.1, which allows testing subdomains locally.</em></p>
