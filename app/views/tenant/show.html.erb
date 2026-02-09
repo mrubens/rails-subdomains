@@ -4,4 +4,41 @@
 
 <p>Any subdomain that's not "admin" or "api" will route here via wildcard matching.</p>
 
+<h2>AJAX Test</h2>
+<button id="ping-btn">POST /ping (with CSRF token)</button>
+<button id="ping-btn-no-csrf">POST /ping (without CSRF token)</button>
+<pre id="ping-result"></pre>
+
+<script>
+  function postPing(includeCsrf) {
+    const result = document.getElementById("ping-result");
+    result.textContent = "Sending...";
+
+    const headers = {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    };
+
+    if (includeCsrf) {
+      const token = document.querySelector('meta[name="csrf-token"]')?.content;
+      headers["X-CSRF-Token"] = token;
+    }
+
+    fetch("/ping", {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({ tenant: "<%= @tenant %>" })
+    })
+      .then(resp => {
+        if (!resp.ok) throw new Error(resp.status + " " + resp.statusText);
+        return resp.json();
+      })
+      .then(data => { result.textContent = JSON.stringify(data, null, 2); })
+      .catch(err => { result.textContent = "ERROR: " + err.message; });
+  }
+
+  document.getElementById("ping-btn").addEventListener("click", () => postPing(true));
+  document.getElementById("ping-btn-no-csrf").addEventListener("click", () => postPing(false));
+</script>
+
 <p><%= link_to "← Back to main site", root_url(subdomain: false) %></p>

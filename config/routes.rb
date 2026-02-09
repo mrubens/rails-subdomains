@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # Must come after specific subdomain constraints
   constraints subdomain: /.+/ do
     get "/", to: "tenant#show", as: :tenant_root
+    post "/ping", to: "tenant#ping", as: :tenant_ping
   end
 
   # Main site (no subdomain) - this is the default root
