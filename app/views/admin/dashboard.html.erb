@@ -1,7 +1,13 @@
-<h1>Admin Dashboard</h1>
+<h1>Admin Love Dashboard</h1>
 
-<p>You're on the <strong><%= @subdomain %></strong> subdomain.</p>
+<p>You're on the <strong><%= @subdomain %></strong> subdomain spreading love! 💕</p>
 
-<p>This page is only accessible via the "admin" subdomain.</p>
+<div style="text-align: center; font-size: 40px; margin: 20px 0;">
+  <span class="heart-decoration">💖</span>
+  <span class="heart-decoration" style="animation-delay: 0.3s;">💝</span>
+  <span class="heart-decoration" style="animation-delay: 0.6s;">💖</span>
+</div>
 
-<p><%= link_to "← Back to main site", root_url(subdomain: false) %></p>
+<p>This page is only accessible via the "admin" subdomain. Admin privileges come with extra love! ❤️</p>
+
+<p><%= link_to "← Back to main Valentine's site", root_url(subdomain: false) %> 💘</p>

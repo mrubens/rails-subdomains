@@ -1,10 +1,16 @@
-<h1>Tenant: <%= @tenant %></h1>
+<h1>Tenant Love Zone: <%= @tenant %></h1>
 
-<p>This is the page for tenant <strong><%= @tenant %></strong>.</p>
+<p>This is the page for tenant <strong><%= @tenant %></strong> with extra Valentine's love! 💗</p>
 
-<p>Any subdomain that's not "admin" or "api" will route here via wildcard matching.</p>
+<div style="text-align: center; font-size: 36px; margin: 15px 0;">
+  <span class="heart-decoration">💕</span>
+  <span class="heart-decoration" style="animation-delay: 0.2s;">💓</span>
+  <span class="heart-decoration" style="animation-delay: 0.4s;">💕</span>
+</div>
 
-<h2>AJAX Test</h2>
+<p>Any subdomain that's not "admin" or "api" will route here via wildcard matching. Love knows no boundaries! 💘</p>
+
+<h2>Send Love via AJAX Test</h2>
 <button id="ping-btn">POST /ping (with CSRF token)</button>
 <button id="ping-btn-no-csrf">POST /ping (without CSRF token)</button>
 <pre id="ping-result"></pre>
@@ -12,7 +18,7 @@
 <script>
   function postPing(includeCsrf) {
     const result = document.getElementById("ping-result");
-    result.textContent = "Sending...";
+    result.textContent = "Sending love...💌";
 
     const headers = {
       "Content-Type": "application/json",
@@ -33,12 +39,12 @@
         if (!resp.ok) throw new Error(resp.status + " " + resp.statusText);
         return resp.json();
       })
-      .then(data => { result.textContent = JSON.stringify(data, null, 2); })
-      .catch(err => { result.textContent = "ERROR: " + err.message; });
+      .then(data => { result.textContent = "💖 Response received with love! 💖\n\n" + JSON.stringify(data, null, 2); })
+      .catch(err => { result.textContent = "💔 ERROR: " + err.message; });
   }
 
   document.getElementById("ping-btn").addEventListener("click", () => postPing(true));
   document.getElementById("ping-btn-no-csrf").addEventListener("click", () => postPing(false));
 </script>
 
-<p><%= link_to "← Back to main site", root_url(subdomain: false) %></p>
+<p><%= link_to "← Back to main Valentine's site", root_url(subdomain: false) %> ❤️</p>
