@@ -9,24 +9,24 @@ class MainController < ApplicationController
   def random_joke
     jokes = [
       {
-        setup: "Why do programmers prefer dark mode?",
-        punchline: "Because light attracts bugs!"
+        setup: "Why do programmers always mix up Halloween and Christmas?",
+        punchline: "Because Oct 31 == Dec 25!"
       },
       {
-        setup: "How many programmers does it take to change a light bulb?",
-        punchline: "None. It's a hardware problem."
+        setup: "What's a programmer's favorite hangout place?",
+        punchline: "Foo Bar!"
       },
       {
-        setup: "Why do Ruby developers love coffee?",
-        punchline: "Because Java is just too verbose!"
+        setup: "Why did the programmer quit their job?",
+        punchline: "Because they didn't get arrays!"
       },
       {
-        setup: "What's a programmer's favorite place to hang out?",
-        punchline: "The Foo Bar!"
+        setup: "How do you comfort a JavaScript bug?",
+        punchline: "You console it!"
       },
       {
-        setup: "Why did the developer go broke?",
-        punchline: "Because they used up all their cache!"
+        setup: "Why don't programmers like nature?",
+        punchline: "It has too many bugs and no debugger!"
       }
     ]
     jokes.sample
