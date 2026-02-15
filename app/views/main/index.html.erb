@@ -2,6 +2,12 @@
 
 <p>Current subdomain: <strong><%= @subdomain %></strong></p>
 
+<h2>Joke of the Moment</h2>
+<div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; margin: 20px 0;">
+  <p><strong>Q:</strong> <%= @joke[:setup] %></p>
+  <p><strong>A:</strong> <%= @joke[:punchline] %></p>
+</div>
+
 <h2>Try these subdomains:</h2>
 <ul>
   <li><strong>admin.lvh.me:3000</strong> - Admin dashboard (specific subdomain constraint)</li>
