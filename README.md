@@ -1,5 +1,9 @@
 # README
 
+Why did the Rails app break up with the monolith?
+
+Because it needed more **sub**-domain-cy.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
